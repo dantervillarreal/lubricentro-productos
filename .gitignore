@@ -1,0 +1,21 @@
+# ───── ENTORNOS Y DEPENDENCIAS ─────
+# No subir entornos virtuales
+venv/
+backend/venv/
+
+# ───── ARCHIVOS COMPILADOS DE PYTHON ─────
+__pycache__/
+**/__pycache__/
+*.py[cod]
+
+# ───── ARCHIVOS DEL SISTEMA ─────
+.DS_Store
+Thumbs.db
+
+# ───── LOGS / TEMPORALES (opcional) ─────
+*.log
+*.tmp
+
+# ───── BACKUPS (opcional) ─────
+*.bak
+*.old
