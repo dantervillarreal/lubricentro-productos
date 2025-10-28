@@ -1,4 +1,5 @@
 import streamlit as st
+from metricas import registrar_busqueda
 from productos import obtener_productos
 from presupuesto import generar_presupuesto_pdf
 
@@ -31,6 +32,10 @@ if buscar:
     else:
         resultados = obtener_productos(marca, modelo, motor, anio)
         st.session_state.resultados = resultados
+        cantidad = 0
+        if isinstance(resultados, list) and resultados and isinstance(resultados[0], dict):
+            cantidad = len(resultados)
+        registrar_busqueda(marca, modelo, motor, anio, cantidad)
 
 # Mostrar resultados si existen
 if st.session_state.resultados:
